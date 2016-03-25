@@ -48,4 +48,8 @@ end
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
 gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'simple_form'
+gem 'rails_admin'
