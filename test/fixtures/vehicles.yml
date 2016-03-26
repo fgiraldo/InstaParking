@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  brand_id: 
+  vehicle_type_id: 
+  user_id: 
+  active: false
+
+two:
+  descripcion: MyString
+  brand_id: 
+  vehicle_type_id: 
+  user_id: 
+  active: false

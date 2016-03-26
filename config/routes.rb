@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :vehicles
+  resources :vehicle_types
+  resources :brands
+  resources :zones
+  resources :states
+  resources :regions
   resources :profiles, only: [:edit, :update]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
