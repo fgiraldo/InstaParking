@@ -11,9 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326034628) do
+ActiveRecord::Schema.define(version: 20160326043630) do
+
+  create_table "additionals", force: :cascade do |t|
+    t.integer  "supply_id",   limit: 4
+    t.string   "description", limit: 255
+    t.boolean  "active"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "additionals", ["supply_id"], name: "index_additionals_on_supply_id", using: :btree
 
   create_table "brands", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.boolean  "active"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "parking_types", force: :cascade do |t|
     t.string   "description", limit: 255
     t.boolean  "active"
     t.datetime "created_at",              null: false
@@ -47,12 +64,31 @@ ActiveRecord::Schema.define(version: 20160326034628) do
   create_table "states", force: :cascade do |t|
     t.string   "description", limit: 255
     t.boolean  "active"
+    t.integer  "region_id",   limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.integer  "region_id",   limit: 4
   end
 
   add_index "states", ["region_id"], name: "index_states_on_region_id", using: :btree
+
+  create_table "supplies", force: :cascade do |t|
+    t.integer  "number_space", limit: 4
+    t.float    "hourly_rate",  limit: 24
+    t.float    "daily_rate",   limit: 24
+    t.float    "weekly_rate",  limit: 24
+    t.float    "monthly_rate", limit: 24
+    t.integer  "region_id",    limit: 4
+    t.integer  "state_id",     limit: 4
+    t.integer  "zone_id",      limit: 4
+    t.string   "address",      limit: 255
+    t.boolean  "active"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "supplies", ["region_id"], name: "index_supplies_on_region_id", using: :btree
+  add_index "supplies", ["state_id"], name: "index_supplies_on_state_id", using: :btree
+  add_index "supplies", ["zone_id"], name: "index_supplies_on_zone_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -104,8 +140,12 @@ ActiveRecord::Schema.define(version: 20160326034628) do
 
   add_index "zones", ["state_id"], name: "index_zones_on_state_id", using: :btree
 
+  add_foreign_key "additionals", "supplies"
   add_foreign_key "profiles", "users"
   add_foreign_key "states", "regions"
+  add_foreign_key "supplies", "regions"
+  add_foreign_key "supplies", "states"
+  add_foreign_key "supplies", "zones"
   add_foreign_key "vehicles", "brands"
   add_foreign_key "vehicles", "users"
   add_foreign_key "vehicles", "vehicle_types"

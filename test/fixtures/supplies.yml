@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_space: 1
+  hourly_rate: 1.5
+  daily_rate: 1.5
+  weekly_rate: 1.5
+  monthly_rate: 1.5
+  region_id: 
+  state_id: 
+  zone_id: 
+  address: MyString
+  active: false
+
+two:
+  number_space: 1
+  hourly_rate: 1.5
+  daily_rate: 1.5
+  weekly_rate: 1.5
+  monthly_rate: 1.5
+  region_id: 
+  state_id: 
+  zone_id: 
+  address: MyString
+  active: false

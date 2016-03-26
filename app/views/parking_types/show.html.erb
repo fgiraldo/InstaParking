@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @parking_type.description %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @parking_type.active %>
+</p>
+
+<%= link_to 'Edit', edit_parking_type_path(@parking_type) %> |
+<%= link_to 'Back', parking_types_path %>

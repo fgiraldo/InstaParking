@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number space:</strong>
+  <%= @supply.number_space %>
+</p>
+
+<p>
+  <strong>Hourly rate:</strong>
+  <%= @supply.hourly_rate %>
+</p>
+
+<p>
+  <strong>Daily rate:</strong>
+  <%= @supply.daily_rate %>
+</p>
+
+<p>
+  <strong>Weekly rate:</strong>
+  <%= @supply.weekly_rate %>
+</p>
+
+<p>
+  <strong>Monthly rate:</strong>
+  <%= @supply.monthly_rate %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @supply.region %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @supply.state %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @supply.zone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @supply.address %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @supply.active %>
+</p>
+
+<%= link_to 'Edit', edit_supply_path(@supply) %> |
+<%= link_to 'Back', supplies_path %>
