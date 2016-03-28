@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 	end
 
 	def friendly_name
-	    if self.default_profile.nil?
+	    if self.default_profile.first_name.nil?
 	      self.email
 	    else
 	      self.profile.full_name
