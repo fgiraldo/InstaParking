@@ -1,2 +1,16 @@
-<h1>Pages#about_us</h1>
-<p>Find me in app/views/pages/about_us.html.erb</p>
+<%= content_for :header_title do %>
+    About us 
+<% end %>
+<%= content_for :header_sub_title do %>
+    InstaParkingBS 
+<% end %>
+<h2>Historia</h2>
+<p>Nuestra empresa fue fundada en el año 2016 en Lima, Perú. Inicialmente, estuvo compuesta por 3 estudiantes de la Universidad de Ciencias Aplicadas, quienes tuvieron la vision de formar una empresa de alquiler de estacionamiento.</p>
+<p>Este proyecto nació por el déficit actual de estacionamientos en nuestra país y por la necesidad de ayudar a cualquier persona que tenga un automovil a conseguir un espacio de parqueo accesible.</p>
+<br><center><%= image_tag "About_us.jpg", html: { alt: "About_us.jpg" }%></center></br>
+<h3>Mision</h3>
+<p>“Brindar a nuestros clientes espacios de estacionamiento de manera sencilla y rápida”</p>
+<h3>Vision</h3>
+<p> “Ser el mejor proveedor de espacio de estacionamiento en nuestra capital, ofreciendo a nuestros clientes un servicio de calidad”</p>
+<br>
+
