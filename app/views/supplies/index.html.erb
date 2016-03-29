@@ -1,45 +1,54 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Supplies</h1>
-
-<table>
+<%- model_class = Supply -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Number space</th>
-      <th>Hourly rate</th>
-      <th>Daily rate</th>
-      <th>Weekly rate</th>
-      <th>Monthly rate</th>
-      <th>Region</th>
-      <th>State</th>
-      <th>Zone</th>
-      <th>Address</th>
-      <th>Active</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:number_space) %></th>
+      <th><%= model_class.human_attribute_name(:hourly_rate) %></th>
+      <th><%= model_class.human_attribute_name(:daily_rate) %></th>
+      <th><%= model_class.human_attribute_name(:weekly_rate) %></th>
+      <th><%= model_class.human_attribute_name(:monthly_rate) %></th>
+      <th><%= model_class.human_attribute_name(:region_id) %></th>
+      <th><%= model_class.human_attribute_name(:state_id) %></th>
+      <th><%= model_class.human_attribute_name(:zone_id) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:active) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @supplies.each do |supply| %>
       <tr>
+        <td><%= link_to supply.id, supply_path(supply) %></td>
         <td><%= supply.number_space %></td>
         <td><%= supply.hourly_rate %></td>
         <td><%= supply.daily_rate %></td>
         <td><%= supply.weekly_rate %></td>
         <td><%= supply.monthly_rate %></td>
-        <td><%= supply.region %></td>
-        <td><%= supply.state %></td>
-        <td><%= supply.zone %></td>
+        <td><%= supply.region_id %></td>
+        <td><%= supply.state_id %></td>
+        <td><%= supply.zone_id %></td>
         <td><%= supply.address %></td>
         <td><%= supply.active %></td>
-        <td><%= link_to 'Show', supply %></td>
-        <td><%= link_to 'Edit', edit_supply_path(supply) %></td>
-        <td><%= link_to 'Destroy', supply, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l supply.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_supply_path(supply), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      supply_path(supply),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Supply', new_supply_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_supply_path,
+            :class => 'btn btn-primary' %>

@@ -1,20 +1,26 @@
-<%= simple_form_for(@supply) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @supply, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :number_space %>
+  <%= error_span(@supply[:number_space]) %>
+  <%= f.input :hourly_rate %>
+  <%= error_span(@supply[:hourly_rate]) %>
+  <%= f.input :daily_rate %>
+  <%= error_span(@supply[:daily_rate]) %>
+  <%= f.input :weekly_rate %>
+  <%= error_span(@supply[:weekly_rate]) %>
+  <%= f.input :monthly_rate %>
+  <%= error_span(@supply[:monthly_rate]) %>
+  <%= f.input :region_id %>
+  <%= error_span(@supply[:region_id]) %>
+  <%= f.input :state_id %>
+  <%= error_span(@supply[:state_id]) %>
+  <%= f.input :zone_id %>
+  <%= error_span(@supply[:zone_id]) %>
+  <%= f.input :address %>
+  <%= error_span(@supply[:address]) %>
+  <%= f.input :active %>
+  <%= error_span(@supply[:active]) %>
 
-  <div class="form-inputs">
-    <%= f.input :number_space %>
-    <%= f.input :hourly_rate %>
-    <%= f.input :daily_rate %>
-    <%= f.input :weekly_rate %>
-    <%= f.input :monthly_rate %>
-    <%= f.association :region %>
-    <%= f.association :state %>
-    <%= f.association :zone %>
-    <%= f.input :address %>
-    <%= f.input :active %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                supplies_path, :class => 'btn btn-default' %>
 <% end %>

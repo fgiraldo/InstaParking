@@ -1,54 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Supply -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Number space:</strong>
-  <%= @supply.number_space %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:number_space) %>:</strong></dt>
+  <dd><%= @supply.number_space %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hourly_rate) %>:</strong></dt>
+  <dd><%= @supply.hourly_rate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:daily_rate) %>:</strong></dt>
+  <dd><%= @supply.daily_rate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:weekly_rate) %>:</strong></dt>
+  <dd><%= @supply.weekly_rate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:monthly_rate) %>:</strong></dt>
+  <dd><%= @supply.monthly_rate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:region_id) %>:</strong></dt>
+  <dd><%= @supply.region_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state_id) %>:</strong></dt>
+  <dd><%= @supply.state_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zone_id) %>:</strong></dt>
+  <dd><%= @supply.zone_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @supply.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @supply.active %></dd>
+</dl>
 
-<p>
-  <strong>Hourly rate:</strong>
-  <%= @supply.hourly_rate %>
-</p>
-
-<p>
-  <strong>Daily rate:</strong>
-  <%= @supply.daily_rate %>
-</p>
-
-<p>
-  <strong>Weekly rate:</strong>
-  <%= @supply.weekly_rate %>
-</p>
-
-<p>
-  <strong>Monthly rate:</strong>
-  <%= @supply.monthly_rate %>
-</p>
-
-<p>
-  <strong>Region:</strong>
-  <%= @supply.region %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @supply.state %>
-</p>
-
-<p>
-  <strong>Zone:</strong>
-  <%= @supply.zone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @supply.address %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @supply.active %>
-</p>
-
-<%= link_to 'Edit', edit_supply_path(@supply) %> |
-<%= link_to 'Back', supplies_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              supplies_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_supply_path(@supply), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              supply_path(@supply),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
