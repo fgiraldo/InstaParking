@@ -47,7 +47,7 @@ end
 
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '<= 3.2.0'
 
 gem 'devise'
 gem 'devise-bootstrap-views'

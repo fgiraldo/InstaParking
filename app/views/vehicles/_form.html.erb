@@ -1,12 +1,16 @@
 <%= simple_form_for @vehicle, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :descripcion %>
   <%= error_span(@vehicle[:descripcion]) %>
-  <%= f.input :brand_id %>
+  
+  <%= f.association :brand %>
   <%= error_span(@vehicle[:brand_id]) %>
-  <%= f.input :vehicle_type_id %>
+  
+  <%= f.association :vehicle_type %>
   <%= error_span(@vehicle[:vehicle_type_id]) %>
+  
   <%= f.input :user_id %>
   <%= error_span(@vehicle[:user_id]) %>
+  
   <%= f.input :active %>
   <%= error_span(@vehicle[:active]) %>
 
