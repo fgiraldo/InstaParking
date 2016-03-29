@@ -1,15 +1,16 @@
-<%= simple_form_for(@vehicle) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @vehicle, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :descripcion %>
+  <%= error_span(@vehicle[:descripcion]) %>
+  <%= f.input :brand_id %>
+  <%= error_span(@vehicle[:brand_id]) %>
+  <%= f.input :vehicle_type_id %>
+  <%= error_span(@vehicle[:vehicle_type_id]) %>
+  <%= f.input :user_id %>
+  <%= error_span(@vehicle[:user_id]) %>
+  <%= f.input :active %>
+  <%= error_span(@vehicle[:active]) %>
 
-  <div class="form-inputs">
-    <%= f.input :descripcion %>
-    <%= f.association :brand %>
-    <%= f.association :vehicle_type %>
-    <%= f.association :user %>
-    <%= f.input :active %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                vehicles_path, :class => 'btn btn-default' %>
 <% end %>
