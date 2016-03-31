@@ -20,8 +20,8 @@
       <tr>
         <td><%= link_to vehicle.id, vehicle_path(vehicle) %></td>
         <td><%= vehicle.descripcion %></td>
-        <td><%= vehicle.brand_id %></td>
-        <td><%= vehicle.vehicle_type_id %></td>
+        <td><%= vehicle.brand.name %></td>
+        <td><%= vehicle.vehicle_type.name %></td>
         <td><%= vehicle.user_id %></td>
         <td><%= vehicle.active %></td>
         <td><%=l vehicle.created_at %></td>
