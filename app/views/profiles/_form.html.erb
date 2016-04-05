@@ -2,15 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :Nombre %>
-    <%= f.input :Apellido %>
-    <%= f.input :identity_number %>
-    <%= f.input :born_at %>
-    <%= f.input :phone_number %>
-    <%= f.input :landline_number %>
+    <%= f.input :first_name, label: "Nombre" %>
+    <%= f.input :last_name, label: "Apellido" %>
+    <%= f.input :identity_number, label: "DNI" %>
+    <%= f.input :born_at, label: "Fecha de Nacimiento" %>
+    <%= f.input :phone_number, label: "Número Celular" %>
+    <%= f.input :landline_number, label: "Número Casa" %>
     <%= f.input :contact %>
     <%= f.input :company_name %>
-    <%= f.input :address %>
+    <%= f.input :address, label: "Dirección" %>
   </div>
 
   <div class="form-actions">
