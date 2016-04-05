@@ -1,27 +1,25 @@
 Rails.application.routes.draw do
-  resources :additionals
-  resources :supplies
-  resources :parking_types
-  resources :vehicles
+  resources :additionals, only: [:show, :index, :new]
+  resources :supplies, only: [:show, :index, :new]
+  resources :parking_types, only: [:show, :index, :new]
+  resources :vehicles, only: [:show, :index, :edit, :new]
   resources :vehicle_types
-  resources :brands
-  resources :zones
+  resources :brands, only: [:show, :index, :edit, :new]
+  resources :zones, only: [:show, :index, :edit, :new]
   resources :states
-  resources :regions
+  resources :regions, only: [:show, :index, :edit, :new]
   resources :profiles, only: [:edit, :update]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  get 'pages/index'
+  #get 'pages/index'
   
   root 'pages#index'
 
   get 'pages/log_in'
-
   get 'pages/sign_up'
-
   get 'pages/about_us'
-
   get 'pages/contact_us'
+  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
