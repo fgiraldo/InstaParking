@@ -7,9 +7,9 @@
   <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
   <dd><%= @vehicle.descripcion %></dd>
   <dt><strong><%= model_class.human_attribute_name(:brand_id) %>:</strong></dt>
-  <dd><%= @vehicle.brand_id %></dd>
+  <dd><%= @vehicle.brand.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:vehicle_type_id) %>:</strong></dt>
-  <dd><%= @vehicle.vehicle_type_id.name %></dd>
+  <dd><%= @vehicle.vehicle_type.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
   <dd><%= @vehicle.user_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
