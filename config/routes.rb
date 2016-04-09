@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   resources :additionals, only: [:show, :index, :new]
   resources :supplies, only: [:show, :index, :new]
-  resources :parking_types, only: [:show, :index, :new]
+  resources :parking_types
   resources :vehicles, only: [:show, :index, :edit, :new]
   resources :vehicle_types
   resources :brands, only: [:show, :index, :edit, :new]
   resources :zones, only: [:show, :index, :edit, :new]
   resources :states
-  resources :regions, only: [:show, :index, :edit, :new]
+  resources :regions
   resources :profiles, only: [:edit, :update]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

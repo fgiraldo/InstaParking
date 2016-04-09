@@ -1,6 +1,6 @@
 <%- model_class = ParkingType -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h2><%=t '.title', :default => "Tipo de Espacio" %></h2>
 </div>
 
 <dl class="dl-horizontal">
@@ -10,12 +10,12 @@
   <dd><%= @parking_type.active %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              parking_types_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_parking_type_path(@parking_type), :class => 'btn btn-default' %>
+<%= link_to t('.back', :default => "Volver a lista"),
+              parking_types_path, :class => 'btn btn-info'  %>
+<%= link_to t('.edit', :default => "Modificar"),
+              edit_parking_type_path(@parking_type), :class => 'btn btn-info' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               parking_type_path(@parking_type),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Esta seguro que desea eliminar?')) },
+              :class => 'btn btn-warning' %>
