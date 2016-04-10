@@ -1,6 +1,6 @@
 <%- model_class = Region -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%=t '.title', :default => "Departamentos" %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -10,12 +10,12 @@
   <dd><%= @region.active %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              regions_path, :class => 'btn btn-default'  %>
+<%= link_to t('.back', :default => "Volver a lista"),
+              regions_path, :class => 'btn btn-info'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_region_path(@region), :class => 'btn btn-default' %>
+              edit_region_path(@region), :class => 'btn btn-info' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               region_path(@region),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :class => 'btn btn-warning' %>

@@ -3,5 +3,12 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+   parking_t = ParkingType.create([ { description: 'Jardin', active: true }, 
+   									{ description: 'Sotano', active: true },
+   									{ description: 'Azotea', active: true }, ])
+
+   parking_t = Region.create([ 	{ description: 'Lima', active: true }, 
+								{ description: 'Ica', active: true },
+								{ description: 'Loreto', active: true }, ])
+
 #   Mayor.create(name: 'Emanuel', city: cities.first)
