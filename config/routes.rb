@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :states
   resources :regions, only: [:show, :index, :edit, :new]
   resources :profiles, only: [:edit, :update]
+  resources :passwords
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   #get 'pages/index'
