@@ -29,7 +29,7 @@ class ParkingTypesController < ApplicationController
 
     respond_to do |format|
       if @parking_type.save
-        format.html { redirect_to @parking_type, notice: 'Parking type was successfully created.' }
+        format.html { redirect_to @parking_type, notice: 'El estacionamiento ha sido creado correctamente.' }
         format.json { render :show, status: :created, location: @parking_type }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ParkingTypesController < ApplicationController
   def update
     respond_to do |format|
       if @parking_type.update(parking_type_params)
-        format.html { redirect_to @parking_type, notice: 'Parking type was successfully updated.' }
+        format.html { redirect_to @parking_type, notice: 'El estacionamiento ha sido modificado correctamente.' }
         format.json { render :show, status: :ok, location: @parking_type }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ParkingTypesController < ApplicationController
   def destroy
     @parking_type.destroy
     respond_to do |format|
-      format.html { redirect_to parking_types_url, notice: 'Parking type was successfully destroyed.' }
+      format.html { redirect_to parking_types_url, notice: 'El estacionamiento ha sido eliminado.' }
       format.json { head :no_content }
     end
   end
