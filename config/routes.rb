@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   
   root 'pages#index'
 
-  get 'pages/log_in'
+  #get 'pages/log_in'
   get 'pages/faq'
   get 'pages/about_us'
   get 'pages/contact_us'
