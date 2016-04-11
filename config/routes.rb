@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/faq'
+
   resources :additionals, only: [:show, :index, :new]
   resources :supplies, only: [:show, :index, :new]
   resources :parking_types
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get 'pages/log_in'
-  get 'pages/sign_up'
+  get 'pages/faq'
   get 'pages/about_us'
   get 'pages/contact_us'
   get 'home/index'
