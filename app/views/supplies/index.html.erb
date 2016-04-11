@@ -1,9 +1,9 @@
 <%- model_class = Supply -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="page-header text-primary">
+  <h2><%=t '.title', :default => "Ofertas" %></h2>
 </div>
 <table class="table table-striped">
-  <thead>
+  <thead class="thead thead-form">
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:number_space) %></th>
@@ -36,19 +36,19 @@
         <td><%= supply.active %></td>
         <td><%=l supply.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_supply_path(supply), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => "Modificar"),
+                      edit_supply_path(supply), :class => 'btn btn-info btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       supply_path(supply),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => 'btn btn-xs btn-warning' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => "Nuevo"),
             new_supply_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-info' %>

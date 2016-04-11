@@ -1,9 +1,9 @@
 <%- model_class = State -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<div class="page-header text-primary">
+  <h2><%=t '.title', :default => "Provincia" %></h2>
 </div>
 <table class="table table-striped">
-  <thead>
+  <thead class="thead thead-form">
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -19,22 +19,22 @@
         <td><%= link_to state.id, state_path(state) %></td>
         <td><%= state.description %></td>
         <td><%= state.active %></td>
-        <td><%= state.region_id %></td>
+        <td><%= state.region.name %></td>
         <td><%=l state.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_state_path(state), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => "Modificar"),
+                      edit_state_path(state), :class => 'btn btn-info btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       state_path(state),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => 'btn btn-xs btn-warning' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => "Nuevo"),
             new_state_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-info' %>

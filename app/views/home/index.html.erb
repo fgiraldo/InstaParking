@@ -1,2 +1,27 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h2><%= current_user.friendly_name %></h2>
+
+<div class="conteiner-fluid well" id="sha">
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-3">
+			<%= image_tag "user.png", class: "img-responsive ", id: "avatar" %>
+		</div>
+
+		<div class="col-lg-offset-1 col-lg-7">
+			<%= link_to "Agregar imagen", "", :class => 'btn btn-xs btn-default'  %>
+
+			<dl class="dl-horizontal">
+			  <dt><strong>Ofertas Publicadas:</strong></dt>
+			  <dt><strong>Reservas Completadas:</strong></dt>
+			  <dd>-</dd>
+			</dl>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-offset-5">
+			<dl class="dl-vertical">
+				<dt><strong><%= link_to "Lista de Estacionamientos Favoritos", "", :class => 'btn btn-xs btn-warning'%></strong></dt>
+			  	<dt><strong><%= link_to "Vizualizar Ofertas Publicadas", "", :class => 'btn btn-xs btn-info'  %></strong></dt>
+			</dl>
+		</div>
+	</div>
+</div>

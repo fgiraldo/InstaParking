@@ -1,18 +1,19 @@
 <%- model_class = Region -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => "Departamentos" %></h1>
+<div class="page-header text-primary">
+  <h2><%=t '.title', :default => "Departamentos" %></h2>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @region.description %></dd>
+  
   <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
   <dd><%= @region.active %></dd>
 </dl>
 
 <%= link_to t('.back', :default => "Volver a lista"),
               regions_path, :class => 'btn btn-info'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
+<%= link_to t('.edit', :default => "Modificar"),
               edit_region_path(@region), :class => 'btn btn-info' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               region_path(@region),

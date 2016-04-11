@@ -1,9 +1,9 @@
 <%- model_class = Region -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => "Departamentos" %></h1>
+<div class="page-header text-primary">
+  <h2><%=t '.title', :default => "Departamentos" %></h2>
 </div>
 <table class="table table-striped">
-  <thead>
+  <thead class="thead thead-form">
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>

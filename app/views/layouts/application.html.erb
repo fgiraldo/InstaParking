@@ -40,17 +40,15 @@
 
     <%= render 'layouts/cabecera' %>  
 
-    <div class="container sinpadding-col">
+    <div class="container-fluid sinpadding-col">
       <div class="row">
 
         <!-- solo muestra segun el acceso -->  
         <% if current_user %>
-          <div class="col-lg-offset-1 col-lg-3">
-            <div class="slider-nav slider-menu-color">
-              <ul class="nav navbar-list nav-stacked">
+          <div class="col-lg-3 navbar-default navbar-menu" role="navigation">
+              <ul class="nav">
                 <%= render 'layouts/opciones' %> 
               </ul>
-             </div>
           </div>
 
           <div class="col-lg-offset-1 col-lg-6 col-lg-offset-1">
@@ -68,6 +66,14 @@
         <% end %>
 
       </div><!--/row-->
+    </div>
+
+    <div class="container-fluid well">
+      <div class="row">
+        <div class="col-lg-12">
+          
+        </div>
+      </div>
     </div>
 
   </body>

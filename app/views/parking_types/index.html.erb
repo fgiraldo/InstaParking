@@ -1,9 +1,9 @@
 <%- model_class = ParkingType -%>
-<div class="page-header">
+<div class="page-header text-primary">
   <h2><%=t '.title', :default => "Tipos de Espacio" %></h2>
 </div>
 <table class="table table-striped">
-  <thead class="thead-inverse">
+  <thead class="thead thead-form">
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>

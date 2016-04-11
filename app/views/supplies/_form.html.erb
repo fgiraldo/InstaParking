@@ -1,26 +1,52 @@
 <%= simple_form_for @supply, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :number_space %>
-  <%= error_span(@supply[:number_space]) %>
-  <%= f.input :hourly_rate %>
-  <%= error_span(@supply[:hourly_rate]) %>
-  <%= f.input :daily_rate %>
-  <%= error_span(@supply[:daily_rate]) %>
-  <%= f.input :weekly_rate %>
-  <%= error_span(@supply[:weekly_rate]) %>
-  <%= f.input :monthly_rate %>
-  <%= error_span(@supply[:monthly_rate]) %>
-  <%= f.input :region_id %>
-  <%= error_span(@supply[:region_id]) %>
-  <%= f.input :state_id %>
-  <%= error_span(@supply[:state_id]) %>
-  <%= f.input :zone_id %>
-  <%= error_span(@supply[:zone_id]) %>
-  <%= f.input :address %>
-  <%= error_span(@supply[:address]) %>
-  <%= f.input :active %>
-  <%= error_span(@supply[:active]) %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-2">
+        <%= f.input :hourly_rate, :label => 'Tarifa por Hora' %>
+        <%= error_span(@supply[:hourly_rate]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+        <%= f.input :daily_rate, :label => 'Tarifa Díaria' %>
+        <%= error_span(@supply[:daily_rate]) %>
+
+        <%= f.input :weekly_rate, :label => 'Tarifa Semanal' %>
+        <%= error_span(@supply[:weekly_rate]) %>
+
+        <%= f.input :monthly_rate, :label => 'Tarifa Mensual' %>
+        <%= error_span(@supply[:monthly_rate]) %>
+      </div>
+      <div class="col-lg-offset-2 col-lg-5">
+        <%= f.input :region_id, :label => 'Departamento' %>
+        <%= error_span(@supply[:region_id]) %>
+
+        <%= f.input :state_id, :label => 'Provincia' %>
+        <%= error_span(@supply[:state_id]) %>
+
+        <%= f.input :zone_id, :label => 'Distrito' %>
+        <%= error_span(@supply[:zone_id]) %>
+      </div>    
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-1 col-lg-9">
+        <%= f.input :number_space, :label => 'Nro. de Espacios' %>
+        <%= error_span(@supply[:number_space]) %>
+        <%= f.input :address, :label => 'Dirección' %>
+        <%= error_span(@supply[:address]) %>
+
+        <%= f.input :active, :label => 'Activado?'%>
+        <%= error_span(@supply[:active]) %>
+      </div> 
+    </div>  
+  </div>
+  
+ 
+
+  
+
+  
+
+  
+
+  <%= f.button :submit, "Registrar", :class => 'btn-success' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.Cancelar")),
                 supplies_path, :class => 'btn btn-default' %>
 <% end %>

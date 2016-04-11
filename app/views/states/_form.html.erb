@@ -1,12 +1,14 @@
 <%= simple_form_for @state, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :description %>
+  <%= f.input :description, :label => 'Descripción' %>
   <%= error_span(@state[:description]) %>
-  <%= f.input :active %>
+
+  <%= f.input :active, :label => 'Activado?' %>
   <%= error_span(@state[:active]) %>
-  <%= f.input :region_id %>
+
+  <%= f.association :region, :label => 'Departamento' %>
   <%= error_span(@state[:region_id]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit, "Registrar", :class => 'btn-success' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.Cancelar")),
                 states_path, :class => 'btn btn-default' %>
 <% end %>
